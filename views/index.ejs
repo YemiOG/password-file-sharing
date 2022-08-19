@@ -7,7 +7,13 @@
 
     <title>Sharibobo: The Ultimate File Sharing Service</title>
   </head>
-  <body style="font-family: 'Ubuntu', sans-serif">
+  <body style="font-family: 'Ubuntu', sans-serif; padding-top: 100px">
+    <% if (locals.fileLink != null){%>
+    <div style="margin-bottom: 1rem">
+      Your File uploaded
+      <a href="<%= locals.fileLink%>"><%= locals.fileLink%></a>
+    </div>
+    <% } %>
     <div>
       <form
         action="/upload"
@@ -25,7 +31,12 @@
         <input type="file" id="file" name="file" required />
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" />
-        <button style="grid-column: span 2" type="submit">Share</button>
+        <div style="display: flex; justify-content: space-between">
+          <button style="" type="submit">Share</button>
+          <button style="justify-content: space-between" type="reset">
+            Cancel
+          </button>
+        </div>
       </form>
     </div>
     <style>

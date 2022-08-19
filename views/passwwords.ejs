@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="font-family: 'Ubuntu', sans-serif"">
+    <% if (locals.errorl){%>
+    <div style="color: red; margin-bottom: 1rem">
+      Incorrect Password
+      <a href="<%= locals.fileLink%>"><%= locals.fileLink%></a>
+    </div>
+    <% } %>
+    <form
+      style="
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: auto 1fr;
+        max-width: 500px;
+        margin: 10px auto;
+      "
+      method="post"
+    >
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+      <div style="display: flex; justify-content: space-between">
+        <button style="" type="submit">Share</button>
+        <button style="justify-content: space-between" type="reset">
+          Cancel
+        </button>
+      </div>
+    </form>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+    </style>
+  </body>
+</html>
